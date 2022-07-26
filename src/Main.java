@@ -24,22 +24,19 @@ public class Main {
                     String phoneNumber = scanner.next();
                     System.out.println("The record added.");
                     phoneBook.addRecord(new Contact(name, surname, phoneNumber));
-//                    Contact contact = new Contact(name, surname, phoneNumber);
-//                    phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos
+                    /*Contact contact = new Contact(name, surname, phoneNumber);
+                    phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos*/
                     break;
-//                case "remove":
-//                    if (records.size() == 0) {
-//                        System.out.println("No records to remove!");
-//                    } else {
-//                        for (int i = 0; i < records.size(); i++) { //Al mostrar la lista aquí por medio de la misma implementación que en list, me estoy repitiendo, por lo que esta sección se puede optimizar
-//                            System.out.println(i + 1 + ". " + records.get(i));
-//                        }
-//                        System.out.println("Select a record:");
-//                        int recordToRemove = scanner.nextInt();
-//                        records.remove(recordToRemove - 1);
-//                        System.out.println("The record removed!");
-//                    }
-//                    break;
+                case "remove":
+                    if (phoneBook.countRecords() == 0) {
+                        System.out.println("No records to remove!");
+                    } else {
+                        phoneBook.displayRecords();
+                        System.out.println("Select a record:");
+                        int recordToRemove = scanner.nextInt() - 1;
+                        phoneBook.removeRecords(recordToRemove);
+                    }
+                    break;
 //                case "edit":
 //                    if (records.size() == 0) {
 //                        System.out.println("No records to edit!");

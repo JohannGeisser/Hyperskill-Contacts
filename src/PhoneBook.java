@@ -19,4 +19,9 @@ public class PhoneBook {
         }
     }
 
+    public void removeRecords(int index) {
+        records.remove(index);
+        System.out.println("The record removed!");
+    }
+
 }
