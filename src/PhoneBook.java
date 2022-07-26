@@ -2,10 +2,11 @@ import java.util.ArrayList;
 
 public class PhoneBook {
 
-    Contact contact;
+    private ArrayList<Contact> records = new ArrayList<Contact>();
 
-    public PhoneBook(Contact contact) {
-        this.contact = contact;
+
+    public void addRecord(Contact contact) {
+        records.add(contact);
     }
 
 }
