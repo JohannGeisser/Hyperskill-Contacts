@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -6,12 +7,22 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
+        //Probablemente sea bueno crear una clase PhoneBook que me guarde la lista de los objetos de la clase Contact, en vez de crear la lista en la clase main
+        ArrayList<Contact> records = new ArrayList<Contact>();
+
         do {
             System.out.println("Enter action (add, remove, edit, count, list, exit):");
             String action = scanner.next();
             switch (action) {
                 case "add":
-                    System.out.println("Adding");
+                    System.out.println("Enter the name:");
+                    String name = scanner.next();
+                    System.out.println("Enter the surname:");
+                    String surname = scanner.next();
+                    System.out.println("Enter the number:");
+                    String phoneNumber = scanner.next();
+                    System.out.println("The record added.");
+                    records.add(new Contact(name, surname, phoneNumber));
                     break;
                 case "remove":
                     System.out.println("Removing");
