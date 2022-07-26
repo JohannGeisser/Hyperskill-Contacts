@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("Editing");
                     break;
                 case "count":
-                    System.out.println("Counting");
+                    System.out.println("The Phone Book has " + records.size() + " records.");
                     break;
                 case "list":
                     System.out.println("Listing");
