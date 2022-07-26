@@ -25,34 +25,51 @@ public class Main {
                     records.add(new Contact(name, surname, phoneNumber));
                     break;
                 case "remove":
-                    System.out.println("Removing");
+                    if (records.size() == 0) {
+                        System.out.println("No records to remove!");
+                    } else {
+                        for (int i = 0; i < records.size(); i++) { //Al mostrar la lista aquí por medio de la misma implementación que en list, me estoy repitiendo, por lo que esta sección se puede optimizar
+                            System.out.println(i + 1 + ". " + records.get(i));
+                        }
+                        System.out.println("Select a record:");
+                        int recordToRemove = scanner.nextInt();
+                        records.remove(recordToRemove - 1);
+                        System.out.println("The record removed!");
+                    }
                     break;
                 case "edit":
-                    for (int i = 0; i < records.size(); i++) { //Al mostrar la lista aquí por medio de la misma implementación que en list, me estoy repitiendo, por lo que esta sección se puede optimizar
-                        System.out.println(i + 1 + ". " + records.get(i));
-                    }
-                    System.out.println("Select a record:");
-                    int record = scanner.nextInt();
-                    System.out.println("Select a field (name, surname, number):");
-                    String field = scanner.next();
-                    switch (field) {
-                        case "name":
-                            System.out.println("Enter the name:");
-                            String newName = scanner.next();
-                            records.get(record - 1).setName(newName);
-                            break;
-                        case "surname":
-                            System.out.println("Enter the surname:");
-                            String newSurname = scanner.next();
-                            records.get(record - 1).setSurname(newSurname);
-                            break;
-                        case "number":
-                            System.out.println("Enter the number:");
-                            String newNumber = scanner.next();
-                            records.get(record - 1).setPhoneNumber(newNumber);
-                            break;
-                        default:
-                            System.out.println("No valid option");
+                    if (records.size() == 0) {
+                        System.out.println("No records to edit!");
+                    } else {
+                        for (int i = 0; i < records.size(); i++) { //Al mostrar la lista aquí por medio de la misma implementación que en list, me estoy repitiendo, por lo que esta sección se puede optimizar
+                            System.out.println(i + 1 + ". " + records.get(i));
+                        }
+                        System.out.println("Select a record:");
+                        int record = scanner.nextInt();
+                        System.out.println("Select a field (name, surname, number):");
+                        String field = scanner.next();
+                        switch (field) {
+                            case "name":
+                                System.out.println("Enter the name:");
+                                String newName = scanner.next();
+                                records.get(record - 1).setName(newName);
+                                System.out.println("The record updated!");
+                                break;
+                            case "surname":
+                                System.out.println("Enter the surname:");
+                                String newSurname = scanner.next();
+                                records.get(record - 1).setSurname(newSurname);
+                                System.out.println("The record updated!");
+                                break;
+                            case "number":
+                                System.out.println("Enter the number:");
+                                String newNumber = scanner.next();
+                                records.get(record - 1).setPhoneNumber(newNumber);
+                                System.out.println("The record updated!");
+                                break;
+                            default:
+                                System.out.println("No valid option");
+                        }
                     }
                     break;
                 case "count":
