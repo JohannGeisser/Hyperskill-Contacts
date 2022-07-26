@@ -28,7 +28,32 @@ public class Main {
                     System.out.println("Removing");
                     break;
                 case "edit":
-                    System.out.println("Editing");
+                    for (int i = 0; i < records.size(); i++) { //Al mostrar la lista aquí por medio de la misma implementación que en list, me estoy repitiendo, por lo que esta sección se puede optimizar
+                        System.out.println(i + 1 + ". " + records.get(i));
+                    }
+                    System.out.println("Select a record:");
+                    int record = scanner.nextInt();
+                    System.out.println("Select a field (name, surname, number):");
+                    String field = scanner.next();
+                    switch (field) {
+                        case "name":
+                            System.out.println("Enter the name:");
+                            String newName = scanner.next();
+                            records.get(record - 1).setName(newName);
+                            break;
+                        case "surname":
+                            System.out.println("Enter the surname:");
+                            String newSurname = scanner.next();
+                            records.get(record - 1).setSurname(newSurname);
+                            break;
+                        case "number":
+                            System.out.println("Enter the number:");
+                            String newNumber = scanner.next();
+                            records.get(record - 1).setPhoneNumber(newNumber);
+                            break;
+                        default:
+                            System.out.println("No valid option");
+                    }
                     break;
                 case "count":
                     System.out.println("The Phone Book has " + records.size() + " records.");
