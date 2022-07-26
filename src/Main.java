@@ -34,7 +34,9 @@ public class Main {
                     System.out.println("The Phone Book has " + records.size() + " records.");
                     break;
                 case "list":
-                    System.out.println("Listing");
+                    for (int i = 0; i < records.size(); i++) {
+                        System.out.println(i + 1 + ". " + records.get(i));
+                    }
                     break;
                 case "exit":
                     System.out.println("Exiting");
