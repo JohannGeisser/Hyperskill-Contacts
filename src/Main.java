@@ -78,11 +78,9 @@ public class Main {
                 case "count":
                     System.out.println("The Phone Book has " + phoneBook.countRecords() + " records.");
                     break;
-//                case "list":
-//                    for (int i = 0; i < records.size(); i++) {
-//                        System.out.println(i + 1 + ". " + records.get(i));
-//                    }
-//                    break;
+                case "list":
+                    phoneBook.displayRecords();
+                    break;
                 case "exit":
                     System.out.println("Exiting");
                     exit = true;

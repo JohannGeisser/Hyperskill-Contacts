@@ -13,4 +13,10 @@ public class PhoneBook {
         return records.size();
     }
 
+    public void displayRecords() {
+        for (int i = 0; i < records.size(); i++) {
+            System.out.println(i + 1 + ". " + records.get(i));
+        }
+    }
+
 }
