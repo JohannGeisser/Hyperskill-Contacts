@@ -23,7 +23,6 @@ public class Main {
                     System.out.println("Enter the number:");
                     String phoneNumber = scanner.next();
                     System.out.println("The record added.");
-
                     phoneBook.addRecord(new Contact(name, surname, phoneNumber));
 //                    Contact contact = new Contact(name, surname, phoneNumber);
 //                    phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos
@@ -76,18 +75,18 @@ public class Main {
 //                        }
 //                    }
 //                    break;
-//                case "count":
-//                    System.out.println("The Phone Book has " + records.size() + " records.");
-//                    break;
+                case "count":
+                    System.out.println("The Phone Book has " + phoneBook.countRecords() + " records.");
+                    break;
 //                case "list":
 //                    for (int i = 0; i < records.size(); i++) {
 //                        System.out.println(i + 1 + ". " + records.get(i));
 //                    }
 //                    break;
-//                case "exit":
-//                    System.out.println("Exiting");
-//                    exit = true;
-//                    break;
+                case "exit":
+                    System.out.println("Exiting");
+                    exit = true;
+                    break;
                 default:
                     System.out.println("Choose a valid option");
             }

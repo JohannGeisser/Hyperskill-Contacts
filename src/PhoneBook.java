@@ -9,4 +9,8 @@ public class PhoneBook {
         records.add(contact);
     }
 
+    public int countRecords() {
+        return records.size();
+    }
+
 }
