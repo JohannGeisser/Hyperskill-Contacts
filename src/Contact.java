@@ -7,7 +7,12 @@ public class Contact {
     public Contact(String name, String surname, String phoneNumber) {
         this.name = name;
         this.surname = surname;
-        this.phoneNumber = phoneNumber;
+        if(hasNumber(phoneNumber)) {
+            System.out.println("Wrong number format!");
+            this.phoneNumber = "[no number]";
+        } else {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
     public String getName() {
@@ -31,7 +36,20 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if(hasNumber(phoneNumber)) {
+            System.out.println("Wrong number format!");
+            this.phoneNumber = "[no number]";
+        } else {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
+    public static boolean hasNumber(String phoneNumber) {
+        return phoneNumber.contains("+");
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname + ", " + phoneNumber;
+    }
 }
