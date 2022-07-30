@@ -12,16 +12,48 @@ public class Main {
             String action = scanner.next();
             switch (action) {
                 case "add":
-                    System.out.println("Enter the name:");
-                    String name = scanner.next();
-                    System.out.println("Enter the surname:");
-                    String surname = scanner.next();
-                    System.out.println("Enter the number:");
-                    String phoneNumber = scanner.next();
-                    //phoneBook.addRecord(new Contact(name, surname, phoneNumber));
-                    System.out.println("The record added.");
-                    /*Contact contact = new Contact(name, surname, phoneNumber);
-                    phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos*/
+                    System.out.println("Enter the type (person, organization):");
+                    String type = scanner.next();
+                    switch (type) {
+                        case "person":
+                            System.out.println("Enter the name:");
+                            String personName = scanner.next();
+                            System.out.println("Enter the surname:");
+                            String surname = scanner.next();
+                            System.out.println("Enter the birth date:");
+                            String birthDate = scanner.next();
+                            System.out.println("Enter the gender (M, F):");
+                            String gender = scanner.next();
+                            System.out.println("Enter the number:");
+                            String personPhoneNumber = scanner.next();
+
+                            break;
+                        case "organization":
+                            System.out.println("Enter the organization name:");
+                            String organizationName = scanner.next();
+                            System.out.println("Enter the address:");
+                            String address = scanner.next();
+                            System.out.println("Enter the number:");
+                            String organizationPhoneNumber = scanner.next();
+
+                            break;
+                        default:
+                            System.out.println("Choose a valid option");
+                    }
+
+
+
+
+//                    System.out.println("Enter the name:");
+//                    String name = scanner.next();
+//                    System.out.println("Enter the surname:");
+//                    String surname = scanner.next();
+//                    System.out.println("Enter the number:");
+//                    String phoneNumber = scanner.next();
+//                    //phoneBook.addRecord(new Contact(name, surname, phoneNumber));
+//                    System.out.println("The record added.");
+//                    /*Contact contact = new Contact(name, surname, phoneNumber);
+//                    phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos*/
                     break;
                 case "remove":
                     if (phoneBook.countRecords() == 0) {
