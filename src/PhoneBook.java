@@ -39,7 +39,7 @@ public class PhoneBook {
             case "surname":
                 System.out.println("Enter the surname:");
                 String newSurname = scanner.next();
-                records.get(index).setSurname(newSurname);
+                //records.get(index).setSurname(newSurname);
                 System.out.println("The record updated!");
                 break;
             case "number":

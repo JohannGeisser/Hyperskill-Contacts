@@ -18,7 +18,7 @@ public class Main {
                     String surname = scanner.next();
                     System.out.println("Enter the number:");
                     String phoneNumber = scanner.next();
-                    phoneBook.addRecord(new Contact(name, surname, phoneNumber));
+                    //phoneBook.addRecord(new Contact(name, surname, phoneNumber));
                     System.out.println("The record added.");
                     /*Contact contact = new Contact(name, surname, phoneNumber);
                     phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos*/
