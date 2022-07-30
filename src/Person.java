@@ -34,4 +34,6 @@ public class Person extends Contact {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+
 }
