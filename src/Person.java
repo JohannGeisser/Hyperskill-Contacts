@@ -37,7 +37,11 @@ public class Person extends Contact {
 
     @Override
     public String toString() {
-        return super.getName() + " " + surname; // We can't get the name property directly because it is declared as private in the father class (if it was protected, we could access it directly)
+        return "Name: " + super.getName() + "\n" + "Surname: " + surname + "\n" + "Birth date: " + birthDate + "\n" + "Gender: " +gender + "\n" + "Number:" + super.getPhoneNumber();
     }
 
+    @Override
+    public String info() {
+        return super.getName() + " " + surname; // We can't get the name property directly because it is declared as private in the father class (if it was protected, we could access it directly)
+    }
 }

@@ -17,8 +17,12 @@ public class PhoneBook {
 
     public void displayRecords() {
         for (int i = 0; i < records.size(); i++) {
-            System.out.println(i + 1 + ". " + records.get(i));
+            System.out.println(i + 1 + ". " + records.get(i).info());
         }
+    }
+
+    public void displaySpecificInfo(int record) {
+        System.out.println(records.get(record));
     }
 
     public void removeRecords(int index) {

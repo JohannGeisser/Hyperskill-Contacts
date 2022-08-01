@@ -42,4 +42,9 @@ public class Contact {
     public String toString() {
         return name + ", " + phoneNumber;
     }
+
+
+    public String info() {
+        return name;
+    }
 }

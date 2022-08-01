@@ -68,6 +68,9 @@ public class Main {
                     break;
                 case "info":
                     phoneBook.displayRecords();
+                    System.out.println("Select a record:");
+                    int recordDisplay = scanner.nextInt() - 1;
+                    phoneBook.displaySpecificInfo(recordDisplay);
                     break;
                 case "exit":
                     System.out.println("Exiting");
