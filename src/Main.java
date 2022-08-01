@@ -8,7 +8,7 @@ public class Main {
         boolean exit = false;
 
         do {
-            System.out.println("Enter action (add, remove, edit, count, list, exit):");
+            System.out.println("Enter action (add, remove, edit, count, info, exit):");
             String action = scanner.next();
             switch (action) {
                 case "add":  //It would be good to evaluate a factory pattern to create new instances of a determined type of object
@@ -66,7 +66,7 @@ public class Main {
                 case "count":
                     System.out.println("The Phone Book has " + phoneBook.countRecords() + " records.");
                     break;
-                case "list":
+                case "info":
                     phoneBook.displayRecords();
                     break;
                 case "exit":
