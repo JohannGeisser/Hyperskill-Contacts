@@ -5,23 +5,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         PhoneBook phoneBook = new PhoneBook();
+        ContactFactory contactFactory = new ContactFactory();
         boolean exit = false;
 
         do {
-            System.out.println("Enter action (add, remove, edit, count, list, exit):");
+            System.out.println("Enter action (add, remove, edit, count, info, exit):");
             String action = scanner.next();
             switch (action) {
                 case "add":
-                    System.out.println("Enter the name:");
-                    String name = scanner.next();
-                    System.out.println("Enter the surname:");
-                    String surname = scanner.next();
-                    System.out.println("Enter the number:");
-                    String phoneNumber = scanner.next();
-                    phoneBook.addRecord(new Contact(name, surname, phoneNumber));
+                    System.out.println("Enter the type (person, organization):");
+                    String type = scanner.next();
+                    phoneBook.addRecord(contactFactory.newInstance(type));
                     System.out.println("The record added.");
-                    /*Contact contact = new Contact(name, surname, phoneNumber);
-                    phoneBook.addRecord(contact); ***** Otra forma de ingresar los datos*/
                     break;
                 case "remove":
                     if (phoneBook.countRecords() == 0) {
@@ -46,8 +41,11 @@ public class Main {
                 case "count":
                     System.out.println("The Phone Book has " + phoneBook.countRecords() + " records.");
                     break;
-                case "list":
+                case "info":
                     phoneBook.displayRecords();
+                    System.out.println("Select a record:");
+                    int recordDisplay = scanner.nextInt() - 1;
+                    phoneBook.displaySpecificInfo(recordDisplay);
                     break;
                 case "exit":
                     System.out.println("Exiting");

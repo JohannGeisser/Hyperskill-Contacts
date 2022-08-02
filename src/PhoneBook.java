@@ -17,8 +17,12 @@ public class PhoneBook {
 
     public void displayRecords() {
         for (int i = 0; i < records.size(); i++) {
-            System.out.println(i + 1 + ". " + records.get(i));
+            System.out.println(i + 1 + ". " + records.get(i).info());
         }
+    }
+
+    public void displaySpecificInfo(int record) {
+        System.out.println(records.get(record));
     }
 
     public void removeRecords(int index) {
@@ -27,30 +31,12 @@ public class PhoneBook {
     }
 
     public void editRecord(int index) {
-        System.out.println("Select a field (name, surname, number):");
+        records.get(index).displayFields();
         String field = scanner.next();
-        switch (field) {
-            case "name":
-                System.out.println("Enter the name:");
-                String newName = scanner.next();
-                records.get(index).setName(newName);
-                System.out.println("The record updated!");
-                break;
-            case "surname":
-                System.out.println("Enter the surname:");
-                String newSurname = scanner.next();
-                records.get(index).setSurname(newSurname);
-                System.out.println("The record updated!");
-                break;
-            case "number":
-                System.out.println("Enter the number:");
-                String newNumber = scanner.next();
-                records.get(index).setPhoneNumber(newNumber);
-                System.out.println("The record updated!");
-                break;
-            default:
-                System.out.println("No valid option");
-        }
+        System.out.println(records.get(index).showField(field));
+        String newValue = scanner.next();
+        records.get(index).editField(field, newValue);
+        System.out.println("The record updated!");
     }
 
 }

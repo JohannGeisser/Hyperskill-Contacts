@@ -1,12 +1,10 @@
 public class Contact {
 
     private String name;
-    private String surname;
     private String phoneNumber;
 
-    public Contact(String name, String surname, String phoneNumber) {
+    public Contact(String name, String phoneNumber) {
         this.name = name;
-        this.surname = surname;
         if(hasNumber(phoneNumber)) {
             System.out.println("Wrong number format!");
             this.phoneNumber = "[no number]";
@@ -21,14 +19,6 @@ public class Contact {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public String getPhoneNumber() {
@@ -50,6 +40,40 @@ public class Contact {
 
     @Override
     public String toString() {
-        return name + " " + surname + ", " + phoneNumber;
+        return name + ", " + phoneNumber;
     }
+
+
+    public String info() {
+        return name;
+    }
+
+    public void displayFields() {
+        System.out.println("Select a field (name, number):");
+    }
+
+    public void editField(String field, String newValue) {
+        switch (field) {
+            case "name":
+                this.setName(newValue);
+                break;
+            case "number":
+                this.setPhoneNumber(newValue);
+                break;
+            default:
+                System.out.println("No valid option");
+        }
+    }
+
+    public String showField(String field) {
+        switch (field) {
+            case "name":
+                return "Enter the name:";
+            case "number":
+                return "Enter the number:";
+            default:
+                return "No valid option";
+        }
+    }
+
 }
