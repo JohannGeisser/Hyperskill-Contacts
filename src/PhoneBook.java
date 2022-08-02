@@ -31,93 +31,12 @@ public class PhoneBook {
     }
 
     public void editRecord(int index) {
-
-        if (records.get(index) instanceof Person) {
-            System.out.println("Select a field (name, surname, birth, gender, number):");
-            String field = scanner.next();
-            switch (field) {
-                case "name":
-                    System.out.println("Enter the name:");
-                    String newName = scanner.next();
-                    records.get(index).setName(newName);
-                    System.out.println("The record updated!");
-                    break;
-                case "surname":
-                    System.out.println("Enter the surname:");
-                    String newSurname = scanner.next();
-                    ((Person) records.get(index)).setSurname(newSurname);
-                    System.out.println("The record updated!");
-                    break;
-                case "birth":
-                    System.out.println("Enter the birth date:");
-                    String newBirthDate = scanner.next();
-                    ((Person) records.get(index)).setBirthDate(newBirthDate);
-                    System.out.println("The record updated!");
-                    break;
-                case "gender":
-                    System.out.println("Enter the gender (M, F):");
-                    String newGender = scanner.next();
-                    ((Person) records.get(index)).setGender(newGender);
-                    System.out.println("The record updated!");
-                    break;
-                case "number":
-                    System.out.println("Enter the number:");
-                    String newNumber = scanner.next();
-                    records.get(index).setPhoneNumber(newNumber);
-                    System.out.println("The record updated!");
-                    break;
-                default:
-                    System.out.println("No valid option");
-            }
-        } else {
-
-            System.out.println("Select a field (address, number):");
-            String field = scanner.next();
-            switch (field) {
-                case "address":
-                    System.out.println("Enter address:");
-                    String newAddress = scanner.next();
-                    ((Organization) records.get(index)).setAddress(newAddress);
-                    System.out.println("The record updated!");
-                    break;
-                case "number":
-                    System.out.println("Enter the number:");
-                    String newNumber = scanner.next();
-                    records.get(index).setPhoneNumber(newNumber);
-                    System.out.println("The record updated!");
-                    break;
-                default:
-                    System.out.println("No valid option");
-            }
-
-        }
-
-
-
-//        System.out.println("Select a field (name, surname, number):");
-//        String field = scanner.next();
-//        switch (field) {
-//            case "name":
-//                System.out.println("Enter the name:");
-//                String newName = scanner.next();
-//                records.get(index).setName(newName);
-//                System.out.println("The record updated!");
-//                break;
-//            case "surname":
-//                System.out.println("Enter the surname:");
-//                String newSurname = scanner.next();
-//                //records.get(index).setSurname(newSurname);
-//                System.out.println("The record updated!");
-//                break;
-//            case "number":
-//                System.out.println("Enter the number:");
-//                String newNumber = scanner.next();
-//                records.get(index).setPhoneNumber(newNumber);
-//                System.out.println("The record updated!");
-//                break;
-//            default:
-//                System.out.println("No valid option");
-//        }
+        records.get(index).displayFields();
+        String field = scanner.next();
+        System.out.println(records.get(index).showField(field));
+        String newValue = scanner.next();
+        records.get(index).editField(field, newValue);
+        System.out.println("The record updated!");
     }
 
 }

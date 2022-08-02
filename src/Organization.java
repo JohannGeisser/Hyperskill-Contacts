@@ -29,4 +29,30 @@ public class Organization extends Contact {
     public void displayFields() {
         System.out.println("Select a field (address, number):");
     }
+
+    @Override
+    public void editField(String field, String newValue) {
+        switch (field) {
+            case "address":
+                this.setAddress(newValue);
+                break;
+            case "number":
+                super.setPhoneNumber(newValue);
+                break;
+            default:
+                System.out.println("No valid option");
+        }
+    }
+
+    @Override
+    public String showField(String field) {
+        switch (field) {
+            case "address":
+                return "Enter the address:";
+            case "number":
+                return "Enter the number:";
+            default:
+                return "No valid option";
+        }
+    }
 }

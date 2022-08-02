@@ -16,6 +16,7 @@ public class Main {
                     System.out.println("Enter the type (person, organization):");
                     String type = scanner.next();
                     phoneBook.addRecord(contactFactory.newInstance(type));
+                    System.out.println("The record added.");
                     break;
                 case "remove":
                     if (phoneBook.countRecords() == 0) {

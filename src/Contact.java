@@ -52,4 +52,28 @@ public class Contact {
         System.out.println("Select a field (name, number):");
     }
 
+    public void editField(String field, String newValue) {
+        switch (field) {
+            case "name":
+                this.setName(newValue);
+                break;
+            case "number":
+                this.setPhoneNumber(newValue);
+                break;
+            default:
+                System.out.println("No valid option");
+        }
+    }
+
+    public String showField(String field) {
+        switch (field) {
+            case "name":
+                return "Enter the name:";
+            case "number":
+                return "Enter the number:";
+            default:
+                return "No valid option";
+        }
+    }
+
 }
