@@ -44,4 +44,9 @@ public class Person extends Contact {
     public String info() {
         return super.getName() + " " + surname; // We can't get the name property directly because it is declared as private in the father class (if it was protected, we could access it directly)
     }
+
+    @Override
+    public void displayFields() {
+        System.out.println("Select a field (name, surname, birth, gender, number):");
+    }
 }

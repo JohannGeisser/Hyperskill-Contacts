@@ -47,4 +47,9 @@ public class Contact {
     public String info() {
         return name;
     }
+
+    public void displayFields() {
+        System.out.println("Select a field (name, number):");
+    }
+
 }

@@ -24,4 +24,9 @@ public class Organization extends Contact {
     public String info() {
         return super.info();
     }
+
+    @Override
+    public void displayFields() {
+        System.out.println("Select a field (address, number):");
+    }
 }
